@@ -6,9 +6,10 @@ import './generated/solApi';
 import { requestMessage } from '../auth/authService';
 
 Parse.Cloud.define('requestMessage', async ({ params }: any) => {
-  const { address, chain, networkType } = params;
+  const { appDomain, address, chain, networkType } = params;
 
   const message = await requestMessage({
+    appDomain,
     address,
     chain,
     networkType,

@@ -2,6 +2,7 @@ import Moralis from 'moralis';
 import config from '../config';
 
 export interface RequestMessage {
+  appDomain: string;
   address: string;
   chain: string;
   networkType: string;
