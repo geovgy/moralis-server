@@ -2,7 +2,6 @@ import Moralis from 'moralis';
 import config from '../config';
 
 export interface RequestMessage {
-  appDomain: string;
   address: string;
   chain: string;
   networkType: string;
@@ -13,18 +12,15 @@ const EXPIRATION_TIME = 900000;
 const TIMEOUT = 15;
 
 export async function requestMessage({
-  appDomain,
   address,
   chain,
   networkType,
 }: {
-  appDomain: string;
   address: string;
   chain: string;
   networkType: 'evm';
 }) {
-  // const url = new URL(config.SERVER_URL);
-  const url = new URL(appDomain);
+  const url = new URL(config.SERVER_URL);
   const now = new Date();
   const expirationTime = new Date(now.getTime() + EXPIRATION_TIME);
 
