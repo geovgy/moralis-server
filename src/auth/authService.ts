@@ -20,7 +20,7 @@ export async function requestMessage({
   chain: string;
   networkType: 'evm';
 }) {
-  const url = new URL(config.SERVER_URL);
+  const url = new URL(config.APP_URL);
   const now = new Date();
   const expirationTime = new Date(now.getTime() + EXPIRATION_TIME);
 
